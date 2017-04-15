@@ -1,13 +1,19 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 
 // Express server handling requests and responses
 const app = express();
 app.use(express.static('public'));
+app.use(expressLayouts);
+
+//change default layout file from views/layout.ejs
+app.set('layout','layout/main-layout.ejs');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // our first Route:
+app.locals.tittle = "Express Views";
 
 app.get('/', (req, res, next) => {
   // send views/index.ejs for displaying in the browser
