@@ -24,6 +24,33 @@ app.get('/gallery', (req, res, next) => {
   res.render('gallery');
 });
 
+app.get('/counting-views', (req, res, next) => {
+  res.render('counting-views');
+
+});
+
+const citiesList = ['Paris', 'Ho Chi Ming CIty', 'Madrid', 'Warsaw', 'Moscow' , 'Torono'];
+
+app.get('/cities', (req, res, next) => {
+  res.render(
+    'cities',{
+      cities: citiesList,
+      name: 'Retiom Poelquim',
+      age: 12,
+    });
+});
+
+const foodList = ['Frijoles', 'Croquetas', 'Sopa de Mani', 'Jamaican Food', 'Saltena'].sort();
+
+
+app.get('/foods', (req, res, next) => {
+  res.render(
+    'foods',{
+      food: foodList,
+      nameFood: "My favorite food",
+    });
+});
+
 // Server Started
 app.listen(3000, () => {
   console.log('My first app listening on port 3000!');

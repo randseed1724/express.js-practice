@@ -9,11 +9,32 @@
 </head>
   <body>
 
-    
+
     <div id="top">
         <div class="inner">
             <div class="sname">Rebecca Hall GIFs</div>
-            <label for="show-menu" class="show-menu"><font class="fa fa-bars" aria-hidden="true"></font></label>
+
+
+<h2>
+  Cities Traveled for
+  <%= name %>
+</h2>
+
+     <% if (age >= 21) { %>
+       <p>Which mean they can have some whisky.</p>
+    <% } else {   %>
+      <p>Which mean they can have some root beer.</p>
+  <%   }   %>
+
+
+  <ul>
+    <% cities.forEach((oneCity) => { %>
+      <li>
+    <%= oneCity %>
+     </li>
+    <% }) %>
+    </ul>
+
             <input type="checkbox" id="show-menu" role="button">
             <ul id="navigation">
                 <li><a href="/">Home</a></li>
@@ -108,12 +129,7 @@
 </div>
 
 
-<script>
-function ie() {
-onmouseout="document.getElementsByTagName('img').style.display = 'none';"
-}
-ie();
-</script>
+
 
 </body>
 </html>
